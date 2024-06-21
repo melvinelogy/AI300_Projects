@@ -7,48 +7,101 @@
     <div>
         <h1>Predict TrustTelecom Churn Status</h1>
         <form method="POST">
-            <label for="age">Age:</label><br>
-            <input type="text" id="age" name="age" value="30"><br><br>
+            <label for="account_id">Account ID:</label><br>
+            <input type="text" id="account_id" name="account_id" value="AFEO-XOOCP"><br><br>
 
-            <label for="sex">Sex:</label><br>
-                <select name="sex" id="sex">
+            <label for="has_internet_service">Has Internet Service:</label><br>
+                <select name="has_internet_service" id="has_internet_service">
                 <option value=""></option>
-                <option value="male">Male</option>
-                <option value="female" selected>Female</option>
+                <option value=1>Yes</option>
+                <option value=0 selected>No</option>
             </select><br><br>
 
-            <label for="bmi">TODO 1 - BMI:</label><br>
-            <!-- Fill in BMI text field here, similar to Age -->
-            <br><br>
-
-            <label for="children">Children:</label><br>
-            <select name="children" id="children">
+            <label for="internet_type">Internet Type:</label><br>
+                <select name="internet_type" id="internet_type">
                 <option value=""></option>
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 or more</option>
+                <option value="Fiber Optic">Fiber Optic</option>
             </select><br><br>
 
-            <label for="smoker">TODO 2 - Smoker:</label><br>
-            <!-- Fill in smoker select/dropdown field here, similar to Sex -->
-            <br><br>
-
-            <label for="region">Region:</label><br>
-            <select name="region" id="region">
+            <label for="has_unlimited_data">Has Unlimited Data:</label><br>
+                <select name="has_unlimited_data" id="has_unlimited_data">
                 <option value=""></option>
-                <option value="southwest" selected>Southwest</option>
-                <option value="southeast">Southeast</option>
-                <option value="northwest">Northwest</option>
-                <option value="northeast">Northeast</option>
+                <option value=1>Yes</option>
+                <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="has_multiple_lines">Has Multiple Lines:</label><br>
+            <select name="has_multiple_lines" id="has_multiple_lines">
+            <option value=""></option>
+            <option value=1>Yes</option>
+            <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="contract_type">Contract Type:</label><br>
+            <select name="contract_type" id="contract_type">
+            <option value=""></option>
+            <option value="Two Year">Two Year</option>
+            </select><br><br>
+
+            <label for="paperless_billing">Paperless Billing:</label><br>
+            <select name="paperless_billing" id="paperless_billing">
+            <option value=""></option>
+            <option value=1>Yes</option>
+            <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="payment_method">Payment Method:</label><br>
+            <select name="payment_method" id="payment_method">
+            <option value=""></option>
+            <option value="Credit Card">Credit Card</option>
+            </select><br><br>
+
+            <label for="stream_tv">Stream TV:</label><br>
+            <select name="stream_tv" id="stream_tv">
+            <option value=""></option>
+            <option value=1>Yes</option>
+            <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="stream_movie">Stream Movie:</label><br>
+            <select name="stream_movie" id="stream_movie">
+            <option value=""></option>
+            <option value=1>Yes</option>
+            <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="gender">Gender:</label><br>
+            <select name="gender" id="gender">
+            <option value=""></option>
+            <option value="Female">Female</option>
+            <option value="Male" selected>Male</option>
+            </select><br><br>
+
+            <label for="senior_citizen">Senior Citizen:</label><br>
+            <select name="senior_citizen" id="senior_citizen">
+            <option value=""></option>
+            <option value=1>Yes</option>
+            <option value=0 selected>No</option>
+            </select><br><br>
+
+            <label for="city">City:</label><br>
+            <select name="city" id="city">
+            <option value=""></option>
+            <option value="Camarillo">Camarillo</option>
             </select><br><br>
             
             <input type="submit" value="Predict">
         </form>
 
-        <!-- TODO 3: Add h2 element to display model prediction  -->
-        <!--         (Use Jinja templating with if condition)    -->
+        <div>
+            <h1>Predict TrustTelecom Churn Status</h1>
+            <!-- Form data goes here <form></form> -->
+
+    <!-- Add this Jinja template into the file -->
+      {% if prediction is defined %}
+          <h2>Model Prediction: {{ prediction }}</h2>
+      {% endif %}
+        </div>
 
     </div>
 </body>
